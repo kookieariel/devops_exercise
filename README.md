@@ -28,7 +28,7 @@ Your goal in this exercise is to:
 
 # Additional Notes
 * Don't modify the `inventory service` code.
-* Fork this repository, upload your solution, and then provide us with a link (and permissions).
+* Clone this repository and upload your solution to your personal account (don't fork), and then provide us with a link (and permissions).
 * You have up to 2 hours to complete the exercise.
 * Feel free to code it in any language you would like and use any framework / library / snippet of code you find.
 * We are available to answer any questions you may have, so feel free to ask :smile:.
