@@ -1,0 +1,9 @@
+target:
+  url: http://inventory:1337/inventory
+  jsonpath: '$'
+  metric:
+    name: inventory_sensor_count
+    type: gauge
+    value: count
+  labels:
+    sensor: "sensor"
