@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  inventory:
+    build: 
+      context: ./inventory_server
+    ports:
+      - "1337:1337"
+  
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+  json-exporter:
+    image: prometheuscommunity/json-exporter:latest
+    ports:
+      - "9103:9103"
+    volumes:
+      - ./config.yml:/etc/json_exporter/config.yml
+    environment:
+      - SCRAPE_URL=http://inventory:1337/inventory
+      - JSON_PATH=.
+      - METRIC_NAMESPACE=inventory
+      - LABEL_KEYS=sensor
+    depends_on:
+      - inventory
